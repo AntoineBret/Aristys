@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "86564119249",
+    "firebase_url": "https://aristys-decbc.firebaseio.com",
+    "project_id": "aristys-decbc",
+    "storage_bucket": "aristys-decbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86564119249:android:30b9fda2c7dd47ad",
+        "android_client_info": {
+          "package_name": "com.aristys.aristysapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86564119249-83ubi3v5go6t6ilf553ulbt6iu9uniai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aristys.aristysapp",
+            "certificate_hash": "9cbbb884cc73e025c6f183d6991f7412bca6815a"
+          }
+        },
+        {
+          "client_id": "86564119249-trn18ck81pmb4b32evj29djc7mu7fn53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2dqw2Jpzktii4453RE5IfA49kHx2Y_rk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86564119249-trn18ck81pmb4b32evj29djc7mu7fn53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

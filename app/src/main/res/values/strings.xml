@@ -1,0 +1,179 @@
+<resources>
+
+  <string name="app_name">AristysBeta</string>
+
+  /* HomeActivity Drawer */
+
+  <string name="openDrawer">Open navigation drawer</string>
+  <string name="closeDrawer">Close navigation drawer</string>
+
+  /* Title drawer menu */
+
+  <string name="title_company">Blog Aristys</string>
+  <string name="desc_company">L\'actu web et techno</string>
+
+  <string name="title_business">Nos prestations</string>
+  <string name="desc_business">Notre game de services</string>
+
+  <string name="title_ourwork">Nos réalisations</string>
+  <string name="desc_ourwork">Gallerie de nos sites web</string>
+
+  <string name="title_crm">Suivi projet (Trello)</string>
+  <string name="desc_crm">Beta test CRM Aristys</string>
+
+  <string name="title_contact">Nous contacter</string>
+  <string name="desc_contact">Les infos dont vous avez besoin</string>
+
+  <string name="title_facebook">Facebook</string>
+
+  <string name="title_twitter">Twitter</string>
+
+  <string name="title_linkedin">LinkedIn</string>
+
+  <string name="drawer_section_business">Business</string>
+  <string name="drawer_section_social">Social</string>
+
+
+
+  /* Title drawer menu */
+
+  <string name="title_aristys">Présentation</string>
+  <string name="title_skill">Expertise</string>
+  <string name="title_team">Equipe</string>
+  <string name="title_work">Réalisations</string>
+
+  /* XY Contacts Fragments */
+
+  <string name="start_object">Demande d\'informations: Formule START / Aristys web</string>
+  <string name="web_object">Demande d\'informations: Offres WEB / Aristys web</string>
+  <string name="eco_object">Demande d\'informations: Eco-conception / Aristys web</string>
+  <string name="seo_object">Demande d\'informations: Offres SEO / Aristys web</string>
+  <string name="ux_object">Demande d\'informations: Offres UX / Aristys web</string>
+  <string name="other_object">Demande d\'informations: Autres prestations / Aristys web</string>
+
+  <string name="hint_firstname">Nom</string>
+  <string name="hint_lastname">Prénom</string>
+  <string name="hint_phonenumber">Téléphone</string>
+  <string name="hint_email">Adresse e-mail</string>
+  <string name="hint_activityarea">Secteur d\'activité</string>
+  <string name="hint_message">Ajouter un message</string>
+
+  <string name="btn_send">Send</string>
+
+  <string name="start_contact_tv">AristySART c’est l’assurance d’avoir un site internet complet respectant vos délais et votre budget qui sera maitrisé de bout en bout. N’hésitez pas à nous contacter pour de plus amples informations.</string>
+  <string name="err_msg_firstname">Entrez votre prénom</string>
+  <string name="err_msg_lastname">Entrez votre nom de famille</string>
+  <string name="err_msg_phonenumber">Enter your phone number</string>
+  <string name="err_msg_email">Entrez votre numéro de téléphone</string>
+  <string name="err_msg_activityarea">Entrez votre secteur d\'activité</string>
+  <string name="startcontact">Formulaire de contact </string>
+
+  <string name="checkBox_horizon">Horizon</string>
+  <string name="checkBox_hope">Hope</string>
+  <string name="checkBox_fusion">Fusion</string>
+  <string name="checkBox_origin">Origin</string>
+  <string name="checkBox_extra">Extra</string>
+  <string name="checkBox_wedding">Wedding</string>
+
+  <string name="start_animation">Animation</string>
+  <string name="start_seo">Optimisation SEO</string>
+  <string name="start_eco">Eco-conception Web</string>
+  <string name="start_translation">Module de traduction</string>
+  <string name="start_photo">Optimisation photos</string>
+  <string name="start_blog">Blog</string>
+  <string name="start_menu">Menu personnalisé</string>
+  <string name="start_contact">Formulaire de contact avancé</string>
+
+  <string name="checkBox_solution">AristySOLUTION</string>
+  <string name="checkBox_superior">AristySUPÉRIEUR</string>
+  <string name="checkBox_ux">AristysUX</string>
+  <string name="checkBox_seo">AristySEO</string>
+  <string name="checkBox_print">Graphisme / Print</string>
+  <string name="checkBox_photo">Photo</string>
+  <string name="checkBox_safety">Sécurité</string>
+  <string name="checkBox_mobileapp">Applications Mobiles</string>
+  <string name="checkBox_virtual">Visites Virtuelles</string>
+  <string name="checkBox_eco">Eco-conception</string>
+
+  /* GoogleActivity */
+
+  <string name="title_text">Google Sign-In\nQuickstart</string>
+  <string name="signed_out">Signed out</string>
+  <string name="sign_out">Sign Out</string>
+  <string name="disconnect">Disconnect</string>
+  <string name="desc_google_icon">Google Logo</string>
+  <string name="signed_in_fmt">Signed in as: %s</string>
+  <string name="connections_fmt">Connections: %1$s</string>
+  <string name="msg_contacts_failed">Get contacts failed.</string>
+  <string name="refresh_token">Get Fresh Token</string>
+  <string name="server_client_id">262b4db409b7f8233f80ae9e51476dd3</string>
+  <string name="signed_in">Signed in</string>
+  <string name="id_token_fmt">ID Token: %s</string>
+
+  <string name="loading_title">Loading</string>
+  <string name="loading_please_wait">Please wait while loading data!</string>
+
+  <string name="backdrop_title">Company</string>
+
+  <string name="company">Aristys-web, le blog</string>
+  <string name="service">Nos préstations</string>
+  <string name="skill">Nos compétences</string>
+  <string name="work">Nos réalisations</string>
+  <string name="start">START Design</string>
+
+  <string name="show_as_list">Show as list</string>
+  <string name="show_as_grid">Show as grid</string>
+  <string name="loading">loading</string>
+
+  /* FindUsFragment */
+
+  <string name="address_title">Adresse</string>
+  <string name="address_subtitle">10 Allée Evariste Galois 63000 Clermont-Ferrand</string>
+
+  <string name="schedule_title">Horaires</string>
+  <string name="schedule_subtitle">Du lundi au vendredi de 09h à 18h</string>
+
+  <string name="phone_title">Téléphone</string>
+  <string name="phone_subtitle">07 69 19 69 62</string>
+
+  <string name="website_title">Site web</string>
+  <string name="website_subtitle">http://aristys-web.com</string>
+
+  <string name="share_title">Partager</string>
+  <string name="share_subtitle">Carte de visite</string>
+
+  /* StartProgressFragment */
+
+  <string name="start_progress">START Déroulement</string>
+
+  /* StartDesignFragment */
+
+  <string name="start_design">START Design</string>
+  <string name="start_presentation">Choisissez l’une des 5 présentations design pour votre site web professionnel !</string>
+
+  /* OurWorkFragment */
+
+  <string-array name="image_ids">
+    <item>@drawable/aformac</item>
+    <item>@drawable/perrin</item>
+    <item>@drawable/opening63</item>
+    <item>@drawable/midgardpc</item>
+    <item>@drawable/eden</item>
+    <item>@drawable/arp</item>
+    <item>@drawable/appertise</item>
+
+  </string-array>
+
+  <string-array name="link">
+    <item>https://www.aformac-europe.eu/</item>
+    <item>https://www.avocat-perrin.fr/</item>
+    <item>http://www.opening63.com/</item>
+    <item>https://www.yahoo.com/</item>
+    <item>https://www.aristys-web.com/</item>
+    <item>https://www.aristys-web.com/</item>
+    <item>https://www.aristys-web.com/</item>
+
+  </string-array>
+
+
+</resources>

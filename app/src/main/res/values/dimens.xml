@@ -1,0 +1,59 @@
+<resources>
+
+  /* Home Activity */
+
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+  <dimen name="nav_header_vertical_spacing">8dp</dimen>
+  <dimen name="nav_header_height">176dp</dimen>
+  <dimen name="tile_padding">8dp</dimen>
+  <dimen name="map_height">120dp</dimen>
+
+  <dimen name="detail_backdrop_height">250dp</dimen>
+  <dimen name="card_margin">0dp</dimen>
+
+  <dimen name="backdrop_title">30dp</dimen>
+  <dimen name="backdrop_subtitle">18dp</dimen>
+  <dimen name="card_album_radius">10dp</dimen>
+  <dimen name="company_cover_height">160dp</dimen>
+  <dimen name="company_title_padding">5dp</dimen>
+
+  <dimen name="start_cover_height">190dp</dimen>
+  <dimen name="start_title_padding">5dp</dimen>
+
+  <dimen name="g_top_margin">100dp</dimen>
+
+  /* header_logo_activity_web */
+  <dimen name="materialviewpager_web_logoWidht">250dp</dimen>
+  <dimen name="materialviewpager_web_logoHeight">35dp</dimen>
+
+  /* header_logo_activity_start */
+  <dimen name="materialviewpager_start_logoWidht">250dp</dimen>
+  <dimen name="materialviewpager_start_logoHeight">35dp</dimen>
+
+  /* header_logo_activity_seo */
+  <dimen name="materialviewpager_seo_logoWidht">250dp</dimen>
+  <dimen name="materialviewpager_seo_logoHeight">35dp</dimen>
+
+  /* header_logo_activity_ux */
+  <dimen name="materialviewpager_ux_logoWidht">250dp</dimen>
+  <dimen name="materialviewpager_ux_logoHeight">35dp</dimen>
+
+  /* header_logo_activity_other */
+  <dimen name="materialviewpager_other_logoWidht">250dp</dimen>
+  <dimen name="materialviewpager_other_logoHeight">35dp</dimen>
+
+  /* header_logo_activity_eco */
+  <dimen name="materialviewpager_eco_logoWidht">250dp</dimen>
+  <dimen name="materialviewpager_eco_logoHeight">35dp</dimen>
+
+  /* header_logo_activity_skill */
+  <dimen name="materialviewpager_skill_logoWidht">250dp</dimen>
+  <dimen name="materialviewpager_skill_logoHeight">35dp</dimen>
+
+  /* de.hdodenhof.circleimageview.CircleImageView */
+  <dimen name="image_width">100dp</dimen>
+  <dimen name="image_final_width">0dp</dimen>
+  <dimen name="spacing_normal">16dp</dimen>
+
+</resources>

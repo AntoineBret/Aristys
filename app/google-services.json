@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "6184487092",
+    "firebase_url": "https://aristysbeta.firebaseio.com",
+    "project_id": "aristysbeta",
+    "storage_bucket": "aristysbeta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6184487092:android:30b9fda2c7dd47ad",
+        "android_client_info": {
+          "package_name": "com.aristys.aristysapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6184487092-ftjg3nbgd9r1roq8hgaqq2k98da0sn78.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aristys.aristysapp",
+            "certificate_hash": "ff537dec1f79d05278b2614edd8ff28c32cbbdb1"
+          }
+        },
+        {
+          "client_id": "6184487092-ljkhpo3ncd4fli8ucorssdlph807bj6c.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "6184487092-13ek81q8d7ms6q1qvhsnrua4fngnm9kt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBStAR93XvRyOhGwFCSx5eXX4321BHtdW0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

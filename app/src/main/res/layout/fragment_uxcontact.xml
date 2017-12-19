@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/uxcontactScrollView"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/material_view_pager_placeholder" />
+
+    <android.support.v7.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginBottom="@dimen/cardMarginVertical"
+      android:layout_marginLeft="@dimen/cardMarginHorizontal"
+      android:layout_marginRight="@dimen/cardMarginHorizontal"
+      android:layout_marginTop="@dimen/cardMarginVertical"
+      app:cardCornerRadius="4dp"
+      android:background="@android:color/white"
+      app:cardElevation="4dp">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="4dp"
+        android:paddingLeft="4dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/uxcontact_input_layout_firstname"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:paddingTop="4dp">
+
+          <EditText
+            android:id="@+id/uxcontact_input_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_firstname"
+            android:singleLine="true"
+            android:textAlignment="textStart"
+            android:textAllCaps="false" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/uxcontact_input_layout_lastname"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <EditText
+            android:id="@+id/uxcontact_input_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_lastname"
+            android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/uxcontact_input_layout_phonenumber"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <EditText
+            android:id="@+id/uxcontact_input_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_phonenumber"
+            android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/uxcontact_input_layout_email"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <EditText
+            android:id="@+id/uxcontact_input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/uxcontact_input_layout_activityarea"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <EditText
+            android:id="@+id/uxcontact_input_activityarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_activityarea"
+            android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+          android:id="@+id/relativeLayout1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="20dp">
+
+          <LinearLayout
+            android:id="@+id/uxcontact_layout_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <CheckBox
+              android:id="@+id/checkBox_ux"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:text="@string/checkBox_ux" />
+
+          </LinearLayout>
+
+        </RelativeLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/uxcontact_input_layout_message"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal">
+
+          <EditText
+            android:id="@+id/uxcontact_input_message"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="@string/hint_message"
+            android:layout_marginBottom="20dp"
+            android:inputType="textMultiLine"
+            android:textAlignment="textStart"
+            android:textAllCaps="false" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+          android:id="@+id/uxcontact_btn_send"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="20dp"
+          android:layout_marginTop="20dp"
+          android:background="@color/green"
+          android:text="@string/btn_send"
+          android:textColor="@android:color/white" />
+
+      </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+  </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

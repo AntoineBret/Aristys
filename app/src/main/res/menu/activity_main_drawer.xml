@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:showIn="navigation_view">
+
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_company"
+      android:icon="@drawable/ic_home"
+      android:title="@string/title_company" />
+  </group>
+
+  <group
+    android:id="@+id/gp_two"
+    android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_service"
+      android:icon="@drawable/ic_service"
+      android:title="@string/title_business" />
+    <item
+      android:id="@+id/nav_ourwork"
+      android:icon="@drawable/ic_ourwork"
+      android:title="@string/title_ourwork" />
+  </group>
+
+  <group
+    android:id="@+id/gp_three"
+    android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_CRM"
+      android:icon="@drawable/ic_dashboard"
+      android:title="@string/title_crm" />
+  </group>
+
+  <group
+    android:id="@+id/gp_four"
+    android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_contact"
+      android:icon="@drawable/ic_call_light"
+      android:title="@string/title_contact" />
+    <item
+        android:id="@+id/nav_twitter"
+        android:icon="@drawable/ic_twitter"
+        android:title="@string/title_twitter" />
+    <item
+        android:id="@+id/nav_facebook"
+        android:icon="@drawable/ic_facebook"
+        android:title="@string/title_facebook" />
+    <item
+        android:id="@+id/nav_linkedin"
+        android:icon="@drawable/ic_linkedin"
+        android:title="@string/title_linkedin" />
+  </group>
+</menu>
