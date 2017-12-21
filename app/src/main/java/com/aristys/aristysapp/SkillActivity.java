@@ -29,8 +29,7 @@ public class SkillActivity extends AppCompatActivity {
       setSupportActionBar(toolbar);
     }
 
-    mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
-
+      mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
       @Override
       public Fragment getItem(int position) {
         switch (position % 1) {
@@ -50,7 +49,7 @@ public class SkillActivity extends AppCompatActivity {
       public CharSequence getPageTitle(int position) {
         switch (position % 1) {
           case 0:
-            return "Nos compétences";
+            return "";
         }
         return "";
       }
@@ -97,6 +96,6 @@ public class SkillActivity extends AppCompatActivity {
   @Override
   public void onBackPressed() {
     super.onBackPressed();
-    overridePendingTransition(0, R.anim.slide_exit);
+    overridePendingTransition(0, android.R.anim.slide_out_right);
   }
 }
