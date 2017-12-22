@@ -1,11 +1,10 @@
 package com.aristys.aristysapp.fragment;
 
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -82,9 +81,6 @@ public class WebContactFragment extends Fragment {
     MaterialViewPagerHelper.registerScrollView(getActivity(), contactScrollView);
   }
 
-  private void Options() {
-  }
-
   private void submitForm() {
 
     contact_subject = (String) getText(R.string.web_object);
@@ -125,7 +121,10 @@ public class WebContactFragment extends Fragment {
         + "Téléphone: " + contact_phone_number + '\n'
         + "Adresse e-mail: " + contact_email + '\n'
         + "Secteur d'activité: " + contact_activity_area + '\n'
-        + "Options choisies: " + "" + '\n'
+        + '\n'
+        + "Template Horizon: " + (checkBox_solution .isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Hope: " + (checkBox_superior.isChecked() == true ? "Oui" : "Non") + '\n'
+        + '\n'
         + "Message: " + contact_message + '\n');
 
     startActivity(Intent.createChooser(sendEmail, "Send mail..."));

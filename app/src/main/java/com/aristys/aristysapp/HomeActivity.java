@@ -1,11 +1,15 @@
 package com.aristys.aristysapp;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.aristys.aristysapp.fragment.CRMFragment;
@@ -16,7 +20,6 @@ import com.aristys.aristysapp.fragment.OurWorkFragment;
 import com.aristys.aristysapp.fragment.WebViewFragment;
 import com.mikepenz.itemanimators.AlphaCrossFadeAnimator;
 import com.mikepenz.materialdrawer.AccountHeader;
-import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
@@ -29,26 +32,27 @@ public class HomeActivity extends AppCompatActivity {
 
   private AccountHeader headerResult = null;
   private Drawer result = null;
+  private AnimatedVectorDrawable mMenuDrawable;
+  private AnimatedVectorDrawable mBackDrawable;
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
 
+    mMenuDrawable = (AnimatedVectorDrawable) getDrawable(R.drawable.ic_menu_animatable);
+    mBackDrawable = (AnimatedVectorDrawable) getDrawable(R.drawable.ic_back_animatable);
+
     if (savedInstanceState == null) {
       Fragment f = CompanyFragment.newInstance();
       getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, f).addToBackStack(null).commit();
     }
 
-    headerResult = new AccountHeaderBuilder()
-      .withActivity(this)
-      .withCompactStyle(false)
-      .withHeaderBackground(R.drawable.drawer_header)
-      .withSavedInstance(savedInstanceState)
-      .build();
-
     result = new DrawerBuilder()
       .withActivity(this)
+      .withHeader(R.layout.header_drawer)
+      .withDisplayBelowStatusBar(true)
+      .withTranslucentStatusBar(true)
       .withHasStableIds(true)
       .withItemAnimator(new AlphaCrossFadeAnimator())
       .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
@@ -68,7 +72,8 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
           FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-          fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
+          fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right);
           Fragment fragment = new Fragment();
           Bundle bundle = new Bundle();
           switch (position) {
@@ -104,7 +109,8 @@ public class HomeActivity extends AppCompatActivity {
               break;
           }
           fragmentTransaction.replace(R.id.frame_container, fragment);
-          fragmentTransaction.commitAllowingStateLoss();
+          fragmentTransaction.addToBackStack(null);
+          fragmentTransaction.commit();
           return false;
         }
       })
@@ -118,11 +124,43 @@ public class HomeActivity extends AppCompatActivity {
   }
 
   @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+    if (id == android.R.id.home) {
+      result.openDrawer();
+      menuClick();
+      return true;
+    }
+    return super.onOptionsItemSelected(item);
+  }
+
+  @Override
   public void onBackPressed() {
     if (result != null && result.isDrawerOpen()) {
       result.closeDrawer();
     } else {
-      super.onBackPressed();
+
+      new AlertDialog.Builder(this)
+        .setTitle("Quitter Aristys'app ?")
+        .setIcon(R.drawable.ic_perroquet)
+        .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialog, int which) {
+            moveTaskToBack(true);
+          }
+        })
+        .setNegativeButton("Non", null)
+        .show();
+    }
+  }
+
+  private void menuClick() {
+    if (result != null && result.isDrawerOpen()) {
+      getSupportActionBar().setHomeAsUpIndicator(mMenuDrawable);
+      mMenuDrawable.start();
+    } else {
+      getSupportActionBar().setHomeAsUpIndicator(mBackDrawable);
+      mBackDrawable.start();
     }
   }
 

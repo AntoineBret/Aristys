@@ -51,7 +51,7 @@ public class OurServiceFragment extends Fragment  implements AppBarLayout.OnOffs
   private LinearLayout mTitleContainer;
   private TextView mTitle;
   private AppBarLayout mAppBarLayout;
-  private Toolbar mToolbar;
+  private Toolbar toolbar;
   private RecyclerView mRecyclerView;
   private ServiceAdapter mAdapter;
   private List<Service> serviceList;
@@ -63,16 +63,20 @@ public class OurServiceFragment extends Fragment  implements AppBarLayout.OnOffs
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View rootView = inflater.inflate(R.layout.fragment_ourservice, container, false);
 
-    mToolbar = (Toolbar) rootView.findViewById(R.id.main_toolbar);
-    ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
-    ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(false);
+    toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
+    /* Change back_arrow icon to hamburger icon */
+    toolbar.setNavigationIcon(R.drawable.ic_menu_vector);
+    /* Change classic toolbar to action bar and apply the icon change */
+    ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+    /* Back arrow or hamburger icon enable = true, disable = false */
     ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
-    setHasOptionsMenu(false);
 
-    mTitle          = (TextView) rootView.findViewById(R.id.main_textview_title);
+
+
+    mTitle = (TextView) rootView.findViewById(R.id.main_textview_title);
     mTitleContainer = (LinearLayout) rootView.findViewById(R.id.main_linearlayout_title);
-    mAppBarLayout   = (AppBarLayout) rootView.findViewById(R.id.main_appbar);
+    mAppBarLayout = (AppBarLayout) rootView.findViewById(R.id.main_appbar);
 
     mRecyclerView = (RecyclerView) rootView.findViewById(R.id.service_recyclerview);
 

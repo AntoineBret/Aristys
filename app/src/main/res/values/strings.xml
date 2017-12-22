@@ -1,6 +1,6 @@
 <resources>
 
-  <string name="app_name">AristysBeta</string>
+  <string name="app_name">Aristys</string>
 
   /* HomeActivity Drawer */
 
@@ -82,7 +82,9 @@
   <string name="start_photo">Optimisation photos</string>
   <string name="start_blog">Blog</string>
   <string name="start_menu">Menu personnalisé</string>
-  <string name="start_contact">Formulaire de contact avancé</string>
+  <string name="start_contact">Formulaire de contact</string>
+  <string name="start_ariane">Fil d\'Ariane (offert)</string>
+  <string name="start_websitemap">Plan du site (offert)</string>
 
   <string name="checkBox_solution">AristySOLUTION</string>
   <string name="checkBox_superior">AristySUPÉRIEUR</string>
@@ -169,11 +171,17 @@
     <item>https://www.avocat-perrin.fr/</item>
     <item>http://www.opening63.com/</item>
     <item>https://www.yahoo.com/</item>
-    <item>https://www.aristys-web.com/</item>
-    <item>https://www.aristys-web.com/</item>
-    <item>https://www.aristys-web.com/</item>
+    <item>https://www.lemarchedeleden.com/</item>
+    <item>http://arpnouvelle.com/</item>
+    <item>https://appertise.fr/</item>
 
   </string-array>
 
+  /* Back arrow animation to hamburger*/
+
+  <string name="menu_vector_path" translatable="false">M20 30,L80 30,M20 50,L80 50,M20 70,L80 70</string>
+  <string name="back_vector_path" translatable="false">M50 25,L80 50,M20 50,L80 50,M50 75,L80 50</string>
+  <string name="add_vector_path" translatable="false">M50 20,L50 80,M20 50,L80 50</string>
+  <string name="remove_vector_path" translatable="false">M60 25,L75 45,M25 75,L60 25</string>
 
 </resources>

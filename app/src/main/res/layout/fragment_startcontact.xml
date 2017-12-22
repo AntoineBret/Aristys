@@ -19,16 +19,16 @@
       android:layout_marginLeft="@dimen/cardMarginHorizontal"
       android:layout_marginRight="@dimen/cardMarginHorizontal"
       android:layout_marginTop="@dimen/cardMarginVertical"
-      app:cardCornerRadius="4dp"
       android:background="@android:color/white"
+      app:cardCornerRadius="4dp"
       app:cardElevation="4dp">
 
       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingRight="4dp"
+        android:orientation="vertical"
         android:paddingLeft="4dp"
-        android:orientation="vertical">
+        android:paddingRight="4dp">
 
         <android.support.design.widget.TextInputLayout
           android:id="@+id/input_layout_firstname"
@@ -178,8 +178,9 @@
               android:id="@+id/animation_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_animation"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
 
@@ -187,8 +188,9 @@
               android:id="@+id/seo_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_seo"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
 
@@ -196,8 +198,9 @@
               android:id="@+id/eco_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_eco"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
 
@@ -205,8 +208,9 @@
               android:id="@+id/translation_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_translation"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
 
@@ -214,8 +218,9 @@
               android:id="@+id/photo_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_photo"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
 
@@ -223,8 +228,9 @@
               android:id="@+id/blog_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_blog"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
 
@@ -232,8 +238,9 @@
               android:id="@+id/menu_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_menu"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
 
@@ -241,10 +248,32 @@
               android:id="@+id/contact_Switch"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:checked="true"
+              android:checked="false"
               android:text="@string/start_contact"
+              android:textAlignment="textEnd"
               android:textOff="No"
               android:textOn="Yes" />
+
+            <Switch
+              android:id="@+id/ariane_Switch"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:checked="true"
+              android:text="@string/start_ariane"
+              android:textAlignment="textEnd"
+              android:textOff="No"
+              android:textOn="Yes" />
+
+            <Switch
+              android:id="@+id/websitemap_Switch"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:checked="true"
+              android:text="@string/start_websitemap"
+              android:textAlignment="textEnd"
+              android:textOff="No"
+              android:textOn="Yes" />
+
 
           </LinearLayout>
 
@@ -260,8 +289,8 @@
             android:id="@+id/input_message"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:hint="@string/hint_message"
             android:layout_marginBottom="20dp"
+            android:hint="@string/hint_message"
             android:inputType="textMultiLine"
             android:textAlignment="textStart"
             android:textAllCaps="false" />

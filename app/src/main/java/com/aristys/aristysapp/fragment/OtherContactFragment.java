@@ -127,6 +127,14 @@ public class OtherContactFragment extends Fragment {
         + "Adresse e-mail: " + othercontact_email + '\n'
         + "Secteur d'activité: " + othercontact_activity_area + '\n'
         + "Options choisies: " + "" + '\n'
+        + '\n'
+        + "Template Horizon: " + (checkBox_print .isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Horizon: " + (checkBox_photo .isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Horizon: " + (checkBox_virtual .isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Horizon: " + (checkBox_safety .isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Horizon: " + (checkBox_mobileapp .isChecked() == true ? "Oui" : "Non") + '\n'
+
+        + '\n'
         + "Message: " + othercontact_message + '\n');
 
     startActivity(Intent.createChooser(sendEmail, "Send mail..."));

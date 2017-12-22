@@ -1,12 +1,15 @@
 package com.aristys.aristysapp.fragment;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,12 +54,12 @@ public class FindUsFragment extends Fragment implements SlidingUpPanelLayout.Pan
     View rootView = inflater.inflate(R.layout.fragment_findus, container, false);
 
     toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
+    /* Change back_arrow icon to hamburger icon */
+    toolbar.setNavigationIcon(R.drawable.ic_menu_vector);
+    /* Change classic toolbar to action bar and apply the icon change */
     ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-    ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(false);
-        /* Back arrow enable */
+    /* Back arrow or hamburger icon enable = true, disable = false */
     ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    setHasOptionsMenu(true);
-
 
     mLayout = (SlidingUpPanelLayout) rootView.findViewById(R.id.slidingLayout);
     mLayout.setAnchorPoint(0.80f);
@@ -185,8 +188,8 @@ public class FindUsFragment extends Fragment implements SlidingUpPanelLayout.Pan
 
   @Override
   public void onPanelHidden(View panel) {
-
   }
+
 }
 
 

@@ -13,7 +13,7 @@
   app:viewpager_imageHeaderDarkLayerAlpha="0.2"
   app:viewpager_logo="@layout/header_logo_activity_eco"
   app:viewpager_logoMarginTop="100dp"
-  app:viewpager_pagerTitleStrip="@layout/material_view_pager_pagertitlestrip_newstand"
+  app:viewpager_pagerTitleStrip="@layout/material_view_pager_custom"
   app:viewpager_parallaxHeaderFactor="1.5"
   app:viewpager_transparentToolbar="false"
   xmlns:android="http://schemas.android.com/apk/res/android"

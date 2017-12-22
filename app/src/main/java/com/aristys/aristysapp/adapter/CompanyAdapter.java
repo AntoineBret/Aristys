@@ -28,7 +28,6 @@ public class CompanyAdapter extends RecyclerView.Adapter <CompanyAdapter.ViewHol
             super(view);
             mtitle = (TextView) view.findViewById(R.id.mtitle);
             mthumbnail = (ImageView) view.findViewById(R.id.mthumbnail);
-            mthumbnail.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         }
     }
 

@@ -16,15 +16,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import com.aristys.aristysapp.R;
-import com.bluejamesbond.text.DocumentView;
 import com.github.florent37.materialviewpager.MaterialViewPagerHelper;
-
-import java.util.ArrayList;
 
 public class StartContactFragment extends Fragment {
 
@@ -36,7 +32,7 @@ public class StartContactFragment extends Fragment {
   private EditText inputFirstName, inputLastName, inputPhoneNumber, inputEmail, inputActivityArea, inputMessage;
   private TextInputLayout inputLayoutFirstName, inputLayoutLastName, inputLayoutPhoneNumber, inputLayoutEmail, inputLayoutActivityArea, inputLayoutMessage;
   private CheckBox checkBox_horizon, checkBox_hope, checkBox_fusion, checkBox_origin, checkBox_extra, checkBox_wedding;
-  private Switch animation_Switch, seo_Switch, eco_Switch, translation_Switch, photo_Switch, blog_Switch, menu_Switch, contact_Switch;
+  private Switch animation_Switch, seo_Switch, eco_Switch, translation_Switch, photo_Switch, blog_Switch, menu_Switch, contact_Switch, ariane_Switch, websitemap_Switch;
   private String subject, first_name, last_name, phone_number, email, activity_area, message, animation, seo, eco, translation, photo, blog, menu, contact;
   private Button btnSend;
 
@@ -81,6 +77,8 @@ public class StartContactFragment extends Fragment {
     blog_Switch = (Switch) view.findViewById(R.id.blog_Switch);
     menu_Switch = (Switch) view.findViewById(R.id.menu_Switch);
     contact_Switch = (Switch) view.findViewById(R.id.contact_Switch);
+    ariane_Switch = (Switch) view.findViewById(R.id.ariane_Switch);
+    websitemap_Switch = (Switch) view.findViewById(R.id.websitemap_Switch);
 
     btnSend = (Button) view.findViewById(R.id.btn_send);
     btnSend.setOnClickListener(new View.OnClickListener() {
@@ -97,53 +95,6 @@ public class StartContactFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
 
     MaterialViewPagerHelper.registerScrollView(getActivity(), mScrollView);
-  }
-
-  private void Options() {
-
-    animation = (String) getText(R.string.start_animation);
-    seo = (String) getText(R.string.start_seo);
-    eco = (String) getText(R.string.start_eco);
-    translation = (String) getText(R.string.start_translation);
-    photo = (String) getText(R.string.start_photo);
-    blog = (String) getText(R.string.start_blog);
-    menu = (String) getText(R.string.start_menu);
-    contact = (String) getText(R.string.start_contact);
-
-    ArrayList arrayList = new ArrayList();
-
-    if (animation_Switch.isEnabled()) {
-      arrayList.add(animation);
-    }
-    if (seo_Switch.isEnabled()) {
-      arrayList.add(seo);
-    }
-    if (eco_Switch.isEnabled()) {
-      arrayList.add(eco);
-    }
-    if (translation_Switch.isEnabled()) {
-      arrayList.add(translation);
-    }
-    if (photo_Switch.isEnabled()) {
-      arrayList.add(photo);
-    }
-    if (blog_Switch.isEnabled()) {
-      arrayList.add(blog);
-    }
-    if (menu_Switch.isEnabled()) {
-      arrayList.add(menu);
-    }
-    if (contact_Switch.isEnabled()) {
-      arrayList.add(contact);
-    }
-
-    int totalElements = arrayList.size();
-
-
-    System.out.println("ArrayList contains...");
-    for (int index = 0; index < totalElements; index++)
-      System.out.println(arrayList.get(index));
-
   }
 
   private void submitForm() {
@@ -186,7 +137,25 @@ public class StartContactFragment extends Fragment {
         + "Téléphone: " + phone_number + '\n'
         + "Adresse e-mail: " + email + '\n'
         + "Secteur d'activité: " + activity_area + '\n'
-        + "Options choisies: " + "" + '\n'
+        + '\n'
+        + "Template Horizon: " + (checkBox_horizon.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Hope: " + (checkBox_hope.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Fusion: " + (checkBox_fusion.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Origin: " + (checkBox_origin.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Extra: " + (checkBox_extra.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Template Wedding: " + (checkBox_wedding.isChecked() == true ? "Oui" : "Non") + '\n'
+        + '\n'
+        + "Options Animations: " + (animation_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Options Optimisation SEO: " + (seo_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Options Éco-conception web: " + (eco_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Options Module de traduction: " + (translation_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Options Optimisation photos: " + (photo_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Options Blog: " + (blog_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Menu personnalisé: " + (menu_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Formulaire de contact avancé: " + (contact_Switch.isChecked() == true ? "Oui" : "Non") + '\n'
+        + "Fil d'Ariane (offert): " + (contact_Switch.isChecked() == true ? "Non" : "Oui") + '\n'
+        + "Plan du site (offert): " + (contact_Switch.isChecked() == true ? "Non" : "Oui") + '\n'
+        + '\n'
         + "Message: " + message + '\n');
 
     startActivity(Intent.createChooser(sendEmail, "Send mail..."));

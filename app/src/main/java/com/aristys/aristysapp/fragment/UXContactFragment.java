@@ -122,7 +122,9 @@ public class UXContactFragment extends Fragment {
         + "Téléphone: " + uxcontact_phone_number + '\n'
         + "Adresse e-mail: " + uxcontact_email + '\n'
         + "Secteur d'activité: " + uxcontact_activity_area + '\n'
-        + "Options choisies: " + "" + '\n'
+        + '\n'
+        + "Template Horizon: " + (checkBox_ux.isChecked() == true ? "Oui" : "Non") + '\n'
+        + '\n'
         + "Message: " + uxcontact_message + '\n');
 
     startActivity(Intent.createChooser(sendEmail, "Send mail..."));

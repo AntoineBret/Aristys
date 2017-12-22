@@ -17,7 +17,7 @@
       android:layout_height="wrap_content"
       app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-      <ImageView
+      <com.flaviofaria.kenburnsview.KenBurnsView
         android:id="@+id/main.imageview.placeholder"
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -70,6 +70,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
+    android:paddingTop="4dp"
     app:behavior_overlapTop="30dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -91,7 +92,7 @@
   </android.support.v4.widget.NestedScrollView>
 
   <android.support.v7.widget.Toolbar
-    android:id="@+id/main.toolbar"
+    android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/green"

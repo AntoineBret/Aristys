@@ -62,7 +62,6 @@ public class SEOContactFragment extends Fragment {
 
     checkBox_seo = (CheckBox) view.findViewById(R.id.seo_checkBox);
 
-
     seocontact_btnSend = (Button) view.findViewById(R.id.seocontact_btn_send);
     seocontact_btnSend.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -123,7 +122,9 @@ public class SEOContactFragment extends Fragment {
         + "Téléphone: " + seocontact_phone_number + '\n'
         + "Adresse e-mail: " + seocontact_email + '\n'
         + "Secteur d'activité: " + seocontact_activity_area + '\n'
-        + "Options choisies: " + "" + '\n'
+        + '\n'
+        + "Template Horizon: " + (checkBox_seo.isChecked() == true ? "Oui" : "Non") + '\n'
+        + '\n'
         + "Message: " + seocontact_message + '\n');
 
     startActivity(Intent.createChooser(sendEmail, "Send mail..."));

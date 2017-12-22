@@ -41,7 +41,7 @@ public class WebViewFragment extends Fragment {
     }
 
 
-    public class myWebViewClient extends WebViewClient {
+    public static class myWebViewClient extends WebViewClient {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
         }

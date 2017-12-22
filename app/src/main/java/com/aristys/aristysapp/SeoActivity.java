@@ -1,5 +1,6 @@
 package com.aristys.aristysapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -106,6 +107,6 @@ public class SeoActivity extends AppCompatActivity {
   @Override
   public void onBackPressed() {
     super.onBackPressed();
-    overridePendingTransition(0, R.anim.slide_exit);
+    overridePendingTransition(0, android.R.anim.slide_out_right);
   }
 }

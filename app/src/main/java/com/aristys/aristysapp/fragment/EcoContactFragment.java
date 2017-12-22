@@ -122,7 +122,9 @@ public class EcoContactFragment extends Fragment {
         + "Téléphone: " + ecocontact_phone_number + '\n'
         + "Adresse e-mail: " + ecocontact_email + '\n'
         + "Secteur d'activité: " + ecocontact_activity_area + '\n'
-        + "Options choisies: " + "" + '\n'
+        + '\n'
+        + "Template Horizon: " + (checkBox_eco.isChecked() == true ? "Oui" : "Non") + '\n'
+        + '\n'
         + "Message: " + ecocontact_message + '\n');
 
     startActivity(Intent.createChooser(sendEmail, "Send mail..."));

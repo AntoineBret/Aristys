@@ -107,6 +107,6 @@ public class UXActivity extends AppCompatActivity {
   @Override
   public void onBackPressed() {
     super.onBackPressed();
-    overridePendingTransition(0, R.anim.slide_exit);
+    overridePendingTransition(0, android.R.anim.slide_out_right);
   }
 }
