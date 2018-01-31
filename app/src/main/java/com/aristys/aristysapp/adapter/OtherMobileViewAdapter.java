@@ -44,7 +44,6 @@ public class OtherMobileViewAdapter extends RecyclerView.Adapter<OtherMobileView
     Glide
       .with(context)
       .load(mobile.getMobilethumbnail())
-      .apply(new RequestOptions().override(600, 200))
       .into(holder.mobile_thumbnail);
     holder.mobile_title.setText(mobile.getMobiletitle());
     holder.mobile_subtitle.setText(mobile.getMobilesubtitle());

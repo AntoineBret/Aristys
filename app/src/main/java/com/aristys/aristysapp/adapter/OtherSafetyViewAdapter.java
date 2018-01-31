@@ -44,7 +44,6 @@ public class OtherSafetyViewAdapter extends RecyclerView.Adapter<OtherSafetyView
     Glide
       .with(context)
       .load(safety.getSafetythumbnail())
-      .apply(new RequestOptions().override(600, 200))
       .into(holder.safety_thumbnail);
     holder.safety_title.setText(safety.getSafetytitle());
     holder.safety_subtitle.setText(safety.getSafetysubtitle());

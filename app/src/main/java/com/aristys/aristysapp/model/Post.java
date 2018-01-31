@@ -4,30 +4,43 @@ import android.text.Html;
 
 import org.json.JSONObject;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Post {
 
-  public String title, date, imgURL, content;
+  public static final String SERVER_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+  public static final String LOCAL_FORMAT = "yyyy-MM-dd";
 
-  public static Post parse (JSONObject object) {
+  private String title, date, imgURL, content;
+
+  public static Post parse(JSONObject object) {
     Post post = new Post();
-    post.title= Html.fromHtml(object.optString("title")).toString();
-    post.date=getDateFormatted(object.optString("date"));
-    post.imgURL=object.optString("featured_image");
-    post.content=object.optString("content");
+    post.title = Html.fromHtml(object.optString("title")).toString();
+    post.date = getDateFormatted(object.optString("date"));
+    post.imgURL = object.optString("featured_image");
+    post.content = object.optString("content");
 
     return post;
   }
 
-    private static String getDateFormatted(String date) {
-        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
-        String s=df.format(new Date());
-        return s;
+  private static String getDateFormatted(String dateString) {
+    String dateLocalString = "";
+
+    SimpleDateFormat dfServer = new SimpleDateFormat(SERVER_FORMAT, Locale.getDefault());
+
+    try {
+      Date date = dfServer.parse(dateString);
+      SimpleDateFormat dfLocal = new SimpleDateFormat(LOCAL_FORMAT, Locale.getDefault());
+      dateLocalString = dfLocal.format(date);
+    } catch (ParseException e) {
+      e.printStackTrace();
     }
+
+    return dateLocalString;
+  }
 
   public String getTitle() {
     return title;
@@ -41,4 +54,11 @@ public class Post {
     return imgURL;
   }
 
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
 }

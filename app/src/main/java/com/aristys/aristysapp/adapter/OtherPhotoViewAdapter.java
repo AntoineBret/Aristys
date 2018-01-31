@@ -44,7 +44,6 @@ public class OtherPhotoViewAdapter extends RecyclerView.Adapter <OtherPhotoViewA
     Glide
       .with(context)
       .load(photo.getPhotothumbnail())
-      .apply(new RequestOptions().override(600, 200))
       .into(holder.photo_thumbnail);
     holder.photo_title.setText(photo.getPhototitle());
     holder.photo_subtitle.setText(photo.getPhotosubtitle());

@@ -44,7 +44,6 @@ public void onBindViewHolder(final OtherPrintViewAdapter.ViewHolder holder, fina
   Glide
     .with(context)
     .load(print.getPrintthumbnail())
-    .apply(new RequestOptions().override(600, 200))
     .into(holder.print_thumbnail);
   holder.print_title.setText(print.getPrinttitle());
   holder.print_subtitle.setText(print.getPrintsubtitle());

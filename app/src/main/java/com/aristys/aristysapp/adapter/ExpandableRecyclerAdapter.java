@@ -64,7 +64,6 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableR
     holder.setIsRecyclable(false);
 
     final Post post = postsList.get(i);
-    String url = post.imgURL;
 
     holder.title.setText(post.getTitle());
     holder.date.setText(post.getDate());
@@ -74,7 +73,7 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableR
       @Override
       public void onClick(View v) {
         Intent intent = new Intent(context, DetailPost.class);
-        intent.putExtra("content", post.content);
+        intent.putExtra("content", post.getContent());
         context.startActivity(intent);
       }
     });

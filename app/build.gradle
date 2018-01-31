@@ -44,7 +44,6 @@ dependencies {
   implementation 'com.github.bumptech.glide:volley-integration:4.3.1'
   implementation 'com.google.android.gms:play-services-auth:11.6.0'
   implementation 'com.google.api-client:google-api-client-android:1.22.0'
-  implementation 'com.google.apis:google-api-services-people:v1-rev139-1.22.0'
   implementation 'com.github.bluejamesbond:textjustify-android:2.1.6'
   implementation 'com.jpardogo.materialtabstrip:library:1.1.0'
   implementation 'com.flaviofaria:kenburnsview:1.0.7'
@@ -56,9 +55,6 @@ dependencies {
     transitive = true
   }
   implementation 'com.mikepenz:itemanimators:1.0.1@aar'
-
-  compile 'com.android.support:multidex:1.0.1'
-
 
 }
 apply plugin: 'com.google.gms.google-services'
