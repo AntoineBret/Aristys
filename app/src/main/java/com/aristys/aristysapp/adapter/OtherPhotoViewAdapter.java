@@ -12,6 +12,7 @@ import com.aristys.aristysapp.R;
 import com.aristys.aristysapp.model.Photo;
 import com.bluejamesbond.text.DocumentView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -40,7 +41,11 @@ public class OtherPhotoViewAdapter extends RecyclerView.Adapter <OtherPhotoViewA
   public void onBindViewHolder(final OtherPhotoViewAdapter.ViewHolder holder, final int i) {
     holder.setIsRecyclable(false);
     final Photo photo = photoList.get(i);
-    Glide.with(context).load(photo.getPhotothumbnail()).into(holder.photo_thumbnail);
+    Glide
+      .with(context)
+      .load(photo.getPhotothumbnail())
+      .apply(new RequestOptions().override(600, 200))
+      .into(holder.photo_thumbnail);
     holder.photo_title.setText(photo.getPhototitle());
     holder.photo_subtitle.setText(photo.getPhotosubtitle());
     holder.photo_desc.setText(photo.getPhotodesc());

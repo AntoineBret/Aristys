@@ -80,8 +80,8 @@ public class WebActivity extends AppCompatActivity {
               getResources().getDrawable(R.drawable.superior_header));
           case 2:
             return HeaderDesign.fromColorResAndDrawable(
-              R.color.web_superior,
-              getResources().getDrawable(R.drawable.superior_header));
+              R.color.white,
+              getResources().getDrawable(R.drawable.web_contact_header));
         }
         return null;
       }

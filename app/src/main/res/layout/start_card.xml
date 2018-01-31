@@ -26,7 +26,7 @@
           android:layout_height="@dimen/start_cover_height"
           android:background="?attr/selectableItemBackgroundBorderless"
           android:clickable="true"
-          android:scaleType="fitXY" />
+          android:scaleType="fitCenter" />
 
         <TextView
           android:id="@+id/start_title"

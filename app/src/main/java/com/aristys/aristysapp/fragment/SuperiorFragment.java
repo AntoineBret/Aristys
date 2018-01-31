@@ -60,15 +60,6 @@ public class SuperiorFragment extends Fragment {
     Superior s = new Superior("LA  solution  sur mesure !","Du sur mesure numérique spécialement pour vous, marquez votre différence", "Dans cette formule, retrouvez tout le savoir-faire d’Aristys-Web mis à votre disposition pour valoriser votre activité grâce à des logiciels comme MUSE et Wordpress DIVI. L’objectif est d’avoir un site internet original et efficace pour marquer le Web d'une empreinte unique : la VÔTRE !", covers[0]);
     superiorList.add(s);
 
-    s = new Superior("Avantages AristysSUPERIEUR","","", covers[1]);
-    superiorList.add(s);
-
-    s = new Superior("","","", covers[2]);
-    superiorList.add(s);
-
-    s = new Superior("","","", covers[3]);
-    superiorList.add(s);
-
     SuperiorAdapter.notifyDataSetChanged();
   }
 }

@@ -32,14 +32,12 @@ public class WebViewFragment extends Fragment {
     }
 
     private void callWebClient(String url) {
-
         wv.setWebViewClient(new myWebViewClient());
         wv.getSettings().setLoadsImagesAutomatically(true);
         wv.getSettings().setJavaScriptEnabled(true);
         wv.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         wv.loadUrl(url);
     }
-
 
     public static class myWebViewClient extends WebViewClient {
         @Override

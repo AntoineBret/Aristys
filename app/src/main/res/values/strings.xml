@@ -184,4 +184,8 @@
   <string name="add_vector_path" translatable="false">M50 20,L50 80,M20 50,L80 50</string>
   <string name="remove_vector_path" translatable="false">M60 25,L75 45,M25 75,L60 25</string>
 
+  /* Back twice exit message*/
+
+  <string name="exit_press_back_twice_message">Quitter Aristys-app?</string>
+
 </resources>

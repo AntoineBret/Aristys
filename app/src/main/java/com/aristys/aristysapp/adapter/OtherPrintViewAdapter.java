@@ -12,6 +12,7 @@ import com.aristys.aristysapp.R;
 import com.aristys.aristysapp.model.Print;
 import com.bluejamesbond.text.DocumentView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -40,7 +41,11 @@ public OtherPrintViewAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, 
 public void onBindViewHolder(final OtherPrintViewAdapter.ViewHolder holder, final int i) {
   holder.setIsRecyclable(false);
   final Print print = printList.get(i);
-  Glide.with(context).load(print.getPrintthumbnail()).into(holder.print_thumbnail);
+  Glide
+    .with(context)
+    .load(print.getPrintthumbnail())
+    .apply(new RequestOptions().override(600, 200))
+    .into(holder.print_thumbnail);
   holder.print_title.setText(print.getPrinttitle());
   holder.print_subtitle.setText(print.getPrintsubtitle());
   holder.print_desc.setText(print.getPrintdesc());

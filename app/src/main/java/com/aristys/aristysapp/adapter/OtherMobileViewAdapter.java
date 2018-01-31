@@ -12,10 +12,11 @@ import com.aristys.aristysapp.R;
 import com.aristys.aristysapp.model.Mobile;
 import com.bluejamesbond.text.DocumentView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
-public class OtherMobileViewAdapter extends RecyclerView.Adapter <OtherMobileViewAdapter.ViewHolder> {
+public class OtherMobileViewAdapter extends RecyclerView.Adapter<OtherMobileViewAdapter.ViewHolder> {
 
   private Context context;
 
@@ -23,7 +24,7 @@ public class OtherMobileViewAdapter extends RecyclerView.Adapter <OtherMobileVie
 
   private LayoutInflater inflater = null;
 
-  public OtherMobileViewAdapter(Context context, List <Mobile> mobileList) {
+  public OtherMobileViewAdapter(Context context, List<Mobile> mobileList) {
     this.context = context;
     this.mobileList = mobileList;
     inflater = LayoutInflater.from(context);
@@ -40,7 +41,11 @@ public class OtherMobileViewAdapter extends RecyclerView.Adapter <OtherMobileVie
   public void onBindViewHolder(final OtherMobileViewAdapter.ViewHolder holder, final int i) {
     holder.setIsRecyclable(false);
     final Mobile mobile = mobileList.get(i);
-    Glide.with(context).load(mobile.getMobilethumbnail()).into(holder.mobile_thumbnail);
+    Glide
+      .with(context)
+      .load(mobile.getMobilethumbnail())
+      .apply(new RequestOptions().override(600, 200))
+      .into(holder.mobile_thumbnail);
     holder.mobile_title.setText(mobile.getMobiletitle());
     holder.mobile_subtitle.setText(mobile.getMobilesubtitle());
     holder.mobile_desc.setText(mobile.getMobiledesc());

@@ -32,7 +32,7 @@
         android:layout_height="200dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
-        android:scaleType="centerCrop" />
+        android:scaleType="fitCenter"  />
 
       <TextView
         android:id="@+id/skill_title"

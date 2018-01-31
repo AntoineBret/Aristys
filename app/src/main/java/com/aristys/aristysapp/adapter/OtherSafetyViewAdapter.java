@@ -12,10 +12,11 @@ import com.aristys.aristysapp.R;
 import com.aristys.aristysapp.model.Safety;
 import com.bluejamesbond.text.DocumentView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
-public class OtherSafetyViewAdapter extends RecyclerView.Adapter <OtherSafetyViewAdapter.ViewHolder> {
+public class OtherSafetyViewAdapter extends RecyclerView.Adapter<OtherSafetyViewAdapter.ViewHolder> {
 
   private Context context;
 
@@ -23,7 +24,7 @@ public class OtherSafetyViewAdapter extends RecyclerView.Adapter <OtherSafetyVie
 
   private LayoutInflater inflater = null;
 
-  public OtherSafetyViewAdapter(Context context, List <Safety> safetyList) {
+  public OtherSafetyViewAdapter(Context context, List<Safety> safetyList) {
     this.context = context;
     this.safetyList = safetyList;
     inflater = LayoutInflater.from(context);
@@ -40,7 +41,11 @@ public class OtherSafetyViewAdapter extends RecyclerView.Adapter <OtherSafetyVie
   public void onBindViewHolder(final OtherSafetyViewAdapter.ViewHolder holder, final int i) {
     holder.setIsRecyclable(false);
     final Safety safety = safetyList.get(i);
-    Glide.with(context).load(safety.getSafetythumbnail()).into(holder.safety_thumbnail);
+    Glide
+      .with(context)
+      .load(safety.getSafetythumbnail())
+      .apply(new RequestOptions().override(600, 200))
+      .into(holder.safety_thumbnail);
     holder.safety_title.setText(safety.getSafetytitle());
     holder.safety_subtitle.setText(safety.getSafetysubtitle());
     holder.safety_desc.setText(safety.getSafetydesc());

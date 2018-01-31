@@ -81,7 +81,7 @@ public class StartActivity extends AppCompatActivity {
           case 2:
             return HeaderDesign.fromColorResAndDrawable(
               R.color.start_contact,
-              getResources().getDrawable(R.drawable.skythree));
+              getResources().getDrawable(R.drawable.start_contact));
         }
         return null;
       }

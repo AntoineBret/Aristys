@@ -53,23 +53,23 @@ public class SafetyFragment extends Fragment {
 
   private void initializeData() {
     int[] covers = new int[]{
-      R.drawable.safety_one,
-      R.drawable.safety_one,
-      R.drawable.safety_one,
-      R.drawable.safety_one,
+      R.drawable.safety_conseil,
+      R.drawable.safety_training,
+      R.drawable.safety_rooteed,
+      R.drawable.safety_orisk,
 
     };
 
-    Safety s = new Safety("Presta 1","Presta 1 Subtitle", "", covers[0]);
+    Safety s = new Safety("Services de conseil","Que faire, quand, pourquoi, comment", "Services de Conseil pour vous aider à établir ou améliorer votre posture globale de cybersécurité.", covers[0]);
     safetyList.add(s);
 
-    s = new Safety("Presta 2","Presta 2 Subtitle","", covers[1]);
+    s = new Safety("Formation","Sensibilisez et formez vos équipes","Sensibilisez et formez vos équipes à la cybersécurité pour connaître la menace et mieux vous défendre.", covers[1]);
     safetyList.add(s);
 
-    s = new Safety("Presta 3","Presta 3 Subtitle","", covers[1]);
+    s = new Safety("Audit et test","Testez votre sécurité, simulez les menaces","Évaluatez et testez la sécurité de vos infrastructures et vos actifs numériques.", covers[2]);
     safetyList.add(s);
 
-    s = new Safety("Presta 4","Presta 4 Subtitle","", covers[1]);
+    s = new Safety("Sécurité infogérée","Votre équipe de sécurité sur mesure","Monitoring, Détection & Réponse à Incident pour vous aider à identifier et déjouer les menaces et gérer votre risque cyber.", covers[3]);
     safetyList.add(s);
 
     SafetyAdapter.notifyDataSetChanged();

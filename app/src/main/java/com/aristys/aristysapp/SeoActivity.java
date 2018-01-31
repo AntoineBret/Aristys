@@ -68,12 +68,12 @@ public class SeoActivity extends AppCompatActivity {
         switch (page) {
           case 0:
             return HeaderDesign.fromColorResAndDrawable(
-              R.color.seo,
-              getResources().getDrawable(R.drawable.seo_header));
+              R.color.seo_one,
+              getResources().getDrawable(R.drawable.seo_header_one));
           case 1:
             return HeaderDesign.fromColorResAndDrawable(
-              R.color.seo,
-              getResources().getDrawable(R.drawable.seo_header));
+              R.color.white,
+              getResources().getDrawable(R.drawable.seo_contact_header));
         }
         return null;
       }

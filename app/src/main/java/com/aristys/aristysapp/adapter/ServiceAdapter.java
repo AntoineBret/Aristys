@@ -41,19 +41,19 @@ public class ServiceAdapter extends RecyclerView.Adapter <ServiceAdapter.ViewHol
     holder.service_subtitle.setText(service.getServicesubtitle());
 
     if(position==0)
-      holder.relativeLayout.setBackgroundResource(R.color.colorPrimary);
+      holder.relativeLayout.setBackgroundResource(R.color.service_web);
     if(position==1)
-      holder.relativeLayout.setBackgroundResource(R.color.colorPrimary);
+      holder.relativeLayout.setBackgroundResource(R.color.service_start);
     if(position==2)
-      holder.relativeLayout.setBackgroundResource(R.color.orange);
+      holder.relativeLayout.setBackgroundResource(R.color.service_ux);
     if(position==3)
-      holder.relativeLayout.setBackgroundResource(R.color.green);
+      holder.relativeLayout.setBackgroundResource(R.color.service_seo);
     if(position==4)
-      holder.relativeLayout.setBackgroundResource(R.color.green);
+      holder.relativeLayout.setBackgroundResource(R.color.service_eco);
     if(position==5)
-      holder.relativeLayout.setBackgroundResource(R.color.colorBlack);
+      holder.relativeLayout.setBackgroundResource(R.color.service_other);
     if(position==6)
-      holder.relativeLayout.setBackgroundResource(R.color.colorBlack);
+      holder.relativeLayout.setBackgroundResource(R.color.service_skill);
   }
 
   @Override

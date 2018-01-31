@@ -112,12 +112,19 @@ public class FindUsFragment extends Fragment implements SlidingUpPanelLayout.Pan
     share_onclick.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Uri imageUri = Uri.parse("android.resource://com.aristys.aristysapp/" + R.drawable.cartevisitearistys);
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
-        intent.setType("image/jpeg");
-        intent.putExtra(Intent.EXTRA_STREAM, imageUri);
-        startActivity(Intent.createChooser(intent, "Partager notre carte de visite via..."));
+        Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
+        sendEmail.setType("plain/text");
+        sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"contact@aristys-web.com"});
+        sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, "Carte de visite Aristys-Web");
+        sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
+          "Aristys-Web: " +'\n'
+            + "Jean-Anaël GOBBE, Responsable d'Affaires: " + '\n'
+            + "Téléphone: 0769196962 " + '\n'
+            + "Adresse e-mail: contact@aristys-web.com" + '\n'
+            + "Adresse: Pascalis, 10 Allée Evariste Galois, 63000 Clermont-Ferrand  " + '\n'
+            + "Site web: aristys-web.com" + '\n');
+
+        startActivity(Intent.createChooser(sendEmail, "Partager notre carte de visite via..."));
       }
     });
     return rootView;

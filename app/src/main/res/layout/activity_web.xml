@@ -2,6 +2,7 @@
 <com.github.florent37.materialviewpager.MaterialViewPager android:id="@+id/web_materialViewPager"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:fitsSystemWindows="true"
   app:viewpager_animatedHeaderImage="true"
   app:viewpager_displayToolbarWhenSwipe="true"
   app:viewpager_enableToolbarElevation="true"

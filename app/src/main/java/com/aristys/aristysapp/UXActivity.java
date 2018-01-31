@@ -72,8 +72,8 @@ public class UXActivity extends AppCompatActivity {
               getResources().getDrawable(R.drawable.ux_header));
           case 1:
             return HeaderDesign.fromColorResAndDrawable(
-              R.color.ux,
-              getResources().getDrawable(R.drawable.ux_header));
+              R.color.white,
+              getResources().getDrawable(R.drawable.ux_contact_header));
         }
         return null;
       }

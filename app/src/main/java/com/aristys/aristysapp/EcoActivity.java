@@ -9,10 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.aristys.aristysapp.fragment.EcoAristysFragment;
 import com.aristys.aristysapp.fragment.EcoConceptFragment;
 import com.aristys.aristysapp.fragment.EcoContactFragment;
-import com.aristys.aristysapp.fragment.EcoPartnerFragment;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 
@@ -37,14 +35,10 @@ public class EcoActivity extends AppCompatActivity {
 
       @Override
       public Fragment getItem(int position) {
-        switch (position % 4) {
+        switch (position % 2) {
           case 0:
             return EcoConceptFragment.newInstance();
           case 1:
-            return EcoAristysFragment.newInstance();
-          case 2:
-            return EcoPartnerFragment.newInstance();
-          case 3:
             return EcoContactFragment.newInstance();
           default:
             return EcoConceptFragment.newInstance();
@@ -53,19 +47,15 @@ public class EcoActivity extends AppCompatActivity {
 
       @Override
       public int getCount() {
-        return 4;
+        return 2;
       }
 
       @Override
       public CharSequence getPageTitle(int position) {
-        switch (position % 4) {
+        switch (position % 2) {
           case 0:
             return "Concept";
           case 1:
-            return "Aristys-eco";
-          case 2:
-            return "Partenaires";
-          case 3:
             return "Contact";
         }
         return "";
@@ -82,20 +72,8 @@ public class EcoActivity extends AppCompatActivity {
               getResources().getDrawable(R.drawable.ecoconcept_header));
           case 1:
             return HeaderDesign.fromColorResAndDrawable(
-              R.color.other_photo,
-              getResources().getDrawable(R.drawable.eco_aristys_header));
-          case 2:
-            return HeaderDesign.fromColorResAndDrawable(
-              R.color.other_safety,
-              getResources().getDrawable(R.drawable.eco_partner_header));
-          case 3:
-            return HeaderDesign.fromColorResAndDrawable(
-              R.color.other_mobile,
-              getResources().getDrawable(R.drawable.mobile_header));
-          case 4:
-            return HeaderDesign.fromColorResAndDrawable(
-              R.color.other_mobile,
-              getResources().getDrawable(R.drawable.mobile_header));
+              R.color.white,
+              getResources().getDrawable(R.drawable.eco_contact_header));
         }
         return null;
       }

@@ -129,7 +129,7 @@ public class StartContactFragment extends Fragment {
 
     Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
     sendEmail.setType("plain/text");
-    sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"contact@aristys-web.com"});
+    sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"start@aristys-web.com"});
     sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
     sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
       "Nom: " + first_name + '\n'

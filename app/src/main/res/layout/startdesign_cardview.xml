@@ -33,7 +33,7 @@
         android:paddingRight="4dp"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:scaleType="fitXY" />
+        android:scaleType="fitCenter" />
 
       <TextView
         android:id="@+id/design_title"

@@ -1,18 +1,17 @@
 package com.aristys.aristysapp;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.aristys.aristysapp.fragment.CRMFragment;
 import com.aristys.aristysapp.fragment.CompanyFragment;
 import com.aristys.aristysapp.fragment.FindUsFragment;
 import com.aristys.aristysapp.fragment.OurServiceFragment;
@@ -61,12 +60,11 @@ public class HomeActivity extends AppCompatActivity {
         new SectionDrawerItem().withName(R.string.drawer_section_business),
         new PrimaryDrawerItem().withName(R.string.title_business).withDescription(R.string.desc_business).withIcon(R.drawable.ic_service).withIdentifier(3).withSelectable(true),
         new PrimaryDrawerItem().withName(R.string.title_ourwork).withDescription(R.string.desc_ourwork).withIcon(R.drawable.ic_ourwork).withIdentifier(4).withSelectable(true),
-        new PrimaryDrawerItem().withName(R.string.title_crm).withDescription(R.string.desc_crm).withIcon(R.drawable.ic_dashboard).withIdentifier(5).withSelectable(true),
         new SectionDrawerItem().withName(R.string.drawer_section_social),
-        new PrimaryDrawerItem().withName(R.string.title_contact).withDescription(R.string.desc_contact).withIcon(R.drawable.ic_call_light).withIdentifier(7).withSelectable(true),
-        new PrimaryDrawerItem().withName(R.string.title_twitter).withIcon(R.drawable.ic_twitter).withIdentifier(8).withSelectable(true),
-        new PrimaryDrawerItem().withName(R.string.title_facebook).withIcon(R.drawable.ic_facebook).withIdentifier(9).withSelectable(true),
-        new PrimaryDrawerItem().withName(R.string.title_linkedin).withIcon(R.drawable.ic_linkedin).withIdentifier(10).withSelectable(true))
+        new PrimaryDrawerItem().withName(R.string.title_contact).withDescription(R.string.desc_contact).withIcon(R.drawable.ic_call_light).withIdentifier(6).withSelectable(true),
+        new PrimaryDrawerItem().withName(R.string.title_twitter).withIcon(R.drawable.ic_twitter).withIdentifier(7).withSelectable(true),
+        new PrimaryDrawerItem().withName(R.string.title_facebook).withIcon(R.drawable.ic_facebook).withIdentifier(8).withSelectable(true),
+        new PrimaryDrawerItem().withName(R.string.title_linkedin).withIcon(R.drawable.ic_linkedin).withIdentifier(9).withSelectable(true))
 
       .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
         @Override
@@ -86,23 +84,20 @@ public class HomeActivity extends AppCompatActivity {
             case 4:
               fragment = new OurWorkFragment();
               break;
-            case 5:
-              fragment = new CRMFragment();
-              break;
-            case 7:
+            case 6:
               fragment = new FindUsFragment();
               break;
-            case 8:
+            case 7:
               bundle.putString("url", "https://twitter.com/AristysWeb");
               fragment = new WebViewFragment();
               fragment.setArguments(bundle);
               break;
-            case 9:
+            case 8:
               bundle.putString("url", "https://www.facebook.com/aristysweb/posts");
               fragment = new WebViewFragment();
               fragment.setArguments(bundle);
               break;
-            case 10:
+            case 9:
               bundle.putString("url", "https://www.linkedin.com/company/15244012/admin/updates/");
               fragment = new WebViewFragment();
               fragment.setArguments(bundle);
@@ -138,19 +133,18 @@ public class HomeActivity extends AppCompatActivity {
   public void onBackPressed() {
     if (result != null && result.isDrawerOpen()) {
       result.closeDrawer();
-    } else {
-
-      new AlertDialog.Builder(this)
-        .setTitle("Quitter Aristys'app ?")
-        .setIcon(R.drawable.ic_perroquet)
-        .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
-          @Override
-          public void onClick(DialogInterface dialog, int which) {
-            moveTaskToBack(true);
-          }
-        })
-        .setNegativeButton("Non", null)
-        .show();
+    }
+    else {
+      int fragments = getSupportFragmentManager().getBackStackEntryCount();
+      if (fragments == 1) {
+        finish();
+      } else {
+        if (getFragmentManager().getBackStackEntryCount() > 1) {
+          getFragmentManager().popBackStack();
+        } else {
+          super.onBackPressed();
+        }
+      }
     }
   }
 

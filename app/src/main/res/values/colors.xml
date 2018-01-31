@@ -18,6 +18,15 @@
   <color name="blue_grey_900">#263238</color>
   <color name="transparent">#00000000</color>
 
+  /* Service Adapter */
+
+  <color name="service_web">#424b59</color>
+  <color name="service_start">#424b59</color>
+  <color name="service_ux">#2E3F83</color>
+  <color name="service_seo">#FF4900</color>
+  <color name="service_eco">#829C31</color>
+  <color name="service_other">#000000</color>
+  <color name="service_skill">#000000</color>
 
   /* Drawer layout background */
 
@@ -43,6 +52,7 @@
 
   /* SEO Activity */
 
+  <color name="seo_one">#269DFB</color>
   <color name="seo">#7CBAEF</color>
   <color name="ux">#07C08F</color>
 
@@ -63,12 +73,5 @@
   <color name="start_progress">#655F5F</color>
   <color name="start_design">#009DAC</color>
   <color name="start_contact">#D1BFB7</color>
-
-  /* Splash Activity */
-
-  <color name="custom_progress_background">#ff3c3a3b</color>
-  <color name="custom_progress_blue_progress">#ff0099cc</color>
-  <color name="custom_progress_orange_progress">#FF4900</color>
-  <color name="custom_progress_green_progress">#6AA942</color>
 
 </resources>

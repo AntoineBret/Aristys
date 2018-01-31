@@ -99,8 +99,8 @@ public class OtherActivity extends AppCompatActivity {
               getResources().getDrawable(R.drawable.mobile_header));
           case 4:
             return HeaderDesign.fromColorResAndDrawable(
-              R.color.other_mobile,
-              getResources().getDrawable(R.drawable.mobile_header));
+              R.color.white,
+              getResources().getDrawable(R.drawable.other_contact_header));
         }
         return null;
       }
@@ -110,15 +110,6 @@ public class OtherActivity extends AppCompatActivity {
     mViewPager.getPagerTitleStrip().setViewPager(mViewPager.getViewPager());
 
     final View logo = findViewById(R.id.logo_white);
-    if (logo != null) {
-      logo.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          mViewPager.notifyHeaderChanged();
-          Toast.makeText(getApplicationContext(), "Yes, the title is clickable", Toast.LENGTH_SHORT).show();
-        }
-      });
-    }
   }
 
   @Override
