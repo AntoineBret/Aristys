@@ -18,6 +18,6 @@ public class DetailPost extends AppCompatActivity {
 
     webView = (WebView) findViewById(R.id.webView);
     String content = getIntent().getStringExtra("content");
-    webView.loadData(content, "text/html; charset=UTF-8",null);
+    webView.loadDataWithBaseURL(null, "<style>img{display: inline;height: auto;max-width: 100%;}</style>" + content, "text/html", "UTF-8", null);
   }
 }
