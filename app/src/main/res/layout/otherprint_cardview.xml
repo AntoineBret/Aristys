@@ -34,21 +34,21 @@
         android:paddingBottom="4dp"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:scaleType="fitXY" />
+        android:scaleType="fitCenter"/>
 
       <TextView
         android:id="@+id/print_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/print_thumbnail"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:background="@color/white"
-        android:gravity="left"
+        android:gravity="start"
         android:paddingTop="24dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:textColor="@color/colorBlack"
-        android:textSize="24dp" />
+        android:textSize="24sp" />
 
       <TextView
         android:id="@+id/print_subtitle"
@@ -56,12 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/print_title"
         android:background="@color/white"
-        android:gravity="left"
+        android:gravity="start"
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:textColor="@color/colorBlack"
-        android:textSize="14dp" />
+        android:textSize="14sp" />
 
       <com.bluejamesbond.text.DocumentView
         xmlns:ext="http://schemas.android.com/apk/res-auto"
@@ -71,12 +71,12 @@
         android:layout_below="@+id/print_subtitle"
         android:layout_gravity="center_horizontal|bottom"
         android:background="@color/white"
-        android:gravity="left"
+        android:gravity="start"
         ext:documentView_insetPaddingRight="16dp"
         ext:documentView_insetPaddingLeft="16dp"
         ext:documentView_insetPaddingBottom="24dp"
         android:textColor="@color/colorBlack"
-        android:textSize="16dp"
+        android:textSize="16sp"
         ext:documentView_antialias="true"
         ext:documentView_cacheConfig="auto_quality"
         ext:documentView_hyphen="-"

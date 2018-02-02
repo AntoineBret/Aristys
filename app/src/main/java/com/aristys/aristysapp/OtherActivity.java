@@ -1,13 +1,17 @@
 package com.aristys.aristysapp;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.aristys.aristysapp.fragment.MobileappFragment;
@@ -27,6 +31,9 @@ public class OtherActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_other);
     setTitle("");
+
+      Window w = getWindow();
+      w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
     mViewPager = (MaterialViewPager) findViewById(R.id.other_materialViewPager);
     final Toolbar toolbar = mViewPager.getToolbar();
@@ -84,23 +91,23 @@ public class OtherActivity extends AppCompatActivity {
           case 0:
             return HeaderDesign.fromColorResAndDrawable(
               R.color.other_print,
-              getResources().getDrawable(R.drawable.print_header));
+              ResourcesCompat.getDrawable(getResources(),R.drawable.print_header, null));
           case 1:
             return HeaderDesign.fromColorResAndDrawable(
               R.color.other_photo,
-              getResources().getDrawable(R.drawable.photo_header));
+              ResourcesCompat.getDrawable(getResources(),R.drawable.photo_header, null));
           case 2:
             return HeaderDesign.fromColorResAndDrawable(
               R.color.other_safety,
-              getResources().getDrawable(R.drawable.safety_header));
+              ResourcesCompat.getDrawable(getResources(),R.drawable.safety_header, null));
           case 3:
             return HeaderDesign.fromColorResAndDrawable(
               R.color.other_mobile,
-              getResources().getDrawable(R.drawable.mobile_header));
+              ResourcesCompat.getDrawable(getResources(),R.drawable.mobile_header, null));
           case 4:
             return HeaderDesign.fromColorResAndDrawable(
               R.color.white,
-              getResources().getDrawable(R.drawable.other_contact_header));
+              ResourcesCompat.getDrawable(getResources(),R.drawable.other_contact_header, null));
         }
         return null;
       }

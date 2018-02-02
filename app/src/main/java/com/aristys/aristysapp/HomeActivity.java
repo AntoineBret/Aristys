@@ -2,6 +2,7 @@ package com.aristys.aristysapp;
 
 import android.content.DialogInterface;
 import android.graphics.drawable.AnimatedVectorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.aristys.aristysapp.fragment.CompanyFragment;
 import com.aristys.aristysapp.fragment.FindUsFragment;
@@ -38,6 +41,9 @@ public class HomeActivity extends AppCompatActivity {
   protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
+
+      Window w = getWindow();
+      w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
     mMenuDrawable = (AnimatedVectorDrawable) getDrawable(R.drawable.ic_menu_animatable);
     mBackDrawable = (AnimatedVectorDrawable) getDrawable(R.drawable.ic_back_animatable);

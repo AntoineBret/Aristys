@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -75,11 +78,6 @@ public class OurWorkFragment extends Fragment {
 
     prepareCompany();
 
-    try {
-      Glide.with(this).load(R.drawable.fly_high).into((ImageView) rootView.findViewById(R.id.backdrop));
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
     return rootView;
   }
 
@@ -123,7 +121,7 @@ public class OurWorkFragment extends Fragment {
     private int spacing;
     private boolean includeEdge;
 
-    public GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge) {
+    private GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge) {
       this.spanCount = spanCount;
       this.spacing = spacing;
       this.includeEdge = includeEdge;

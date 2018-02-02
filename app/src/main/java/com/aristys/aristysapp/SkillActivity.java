@@ -1,12 +1,16 @@
 package com.aristys.aristysapp;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.aristys.aristysapp.fragment.SkillFragment;
@@ -23,6 +27,9 @@ public class SkillActivity extends AppCompatActivity {
     setContentView(R.layout.activity_skill);
     setTitle("");
 
+      Window w = getWindow();
+      w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
     mViewPager = (MaterialViewPager) findViewById(R.id.skill_materialViewPager);
     final Toolbar toolbar = mViewPager.getToolbar();
     if (toolbar != null) {
@@ -32,7 +39,7 @@ public class SkillActivity extends AppCompatActivity {
       mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
       @Override
       public Fragment getItem(int position) {
-        switch (position % 1) {
+        switch (position % 0) {
           case 0:
             return SkillFragment.newInstance();
           default:
@@ -47,7 +54,7 @@ public class SkillActivity extends AppCompatActivity {
 
       @Override
       public CharSequence getPageTitle(int position) {
-        switch (position % 1) {
+        switch (position % 0) {
           case 0:
             return "";
         }
@@ -62,7 +69,7 @@ public class SkillActivity extends AppCompatActivity {
           case 0:
             return HeaderDesign.fromColorResAndDrawable(
               R.color.skill_ourskill,
-              getResources().getDrawable(R.drawable.skill_header));
+              ResourcesCompat.getDrawable(getResources(),R.drawable.skill_header, null));
         }
         return null;
       }
@@ -72,15 +79,6 @@ public class SkillActivity extends AppCompatActivity {
     mViewPager.getPagerTitleStrip().setViewPager(mViewPager.getViewPager());
 
     final View logo = findViewById(R.id.logo_white);
-    if (logo != null) {
-      logo.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          mViewPager.notifyHeaderChanged();
-          Toast.makeText(getApplicationContext(), "Yes, the title is clickable", Toast.LENGTH_SHORT).show();
-        }
-      });
-    }
   }
 
   @Override
@@ -95,7 +93,16 @@ public class SkillActivity extends AppCompatActivity {
 
   @Override
   public void onBackPressed() {
-    super.onBackPressed();
-    overridePendingTransition(0, android.R.anim.slide_out_right);
+    int fragments = getSupportFragmentManager().getBackStackEntryCount();
+    if (fragments == 1) {
+      finish();
+    } else {
+      if (getFragmentManager().getBackStackEntryCount() > 1) {
+        getFragmentManager().popBackStack();
+      } else {
+        super.onBackPressed();
+        overridePendingTransition(0, android.R.anim.slide_out_right);
+      }
+    }
   }
 }

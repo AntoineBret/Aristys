@@ -56,7 +56,6 @@ public class PrintFragment extends Fragment {
       R.drawable.print_card,
       R.drawable.print_flyer,
       R.drawable.print_xl,
-
     };
 
     Print p = new Print("Logo","Création de logo sur mesure", "Créer un logo devient un jeu d'enfant avec Aristys ! Obtenez la reconnaissance que votre entreprise mérite en créant un logo remarquable que vos clients pourront facilement identifier.", covers[0]);
@@ -68,7 +67,7 @@ public class PrintFragment extends Fragment {
     p = new Print("Flyer et affiches","Création de flyer et affiches","La date de votre événement est fixée, mais comment le faire connaître, comment ramener un maximum de participants? La réponse est simple, inondez votre ville d’affiches et de flyer! Contactez nous !", covers[2]);
     printList.add(p);
 
-    p = new Print("Support grande taille","Création pour support de grande taille"," Attirez plus de clients grâce à un panneau accrocheur ! Quelle que soit l'expérience graphique souhaité, nous nous chargeons de créer une identité visuelle unique pour votre affichage. !", covers[3]);
+    p = new Print("Support grande taille","Création pour support de grande taille"," Attirez plus de clients grâce à un panneau accrocheur ! Quelle que soit l'expérience graphique souhaité, nous nous chargeons de créer une identité visuelle unique pour votre affichage.", covers[3]);
     printList.add(p);
 
     PrintAdapter.notifyDataSetChanged();
