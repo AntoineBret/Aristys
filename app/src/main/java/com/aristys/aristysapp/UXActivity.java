@@ -1,6 +1,5 @@
 package com.aristys.aristysapp;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -11,11 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
-import com.aristys.aristysapp.fragment.SolutionFragment;
-import com.aristys.aristysapp.fragment.UXContactFragment;
-import com.aristys.aristysapp.fragment.UXFragment;
+import com.aristys.aristysapp.ui.web.solution.SolutionFragment;
+import com.aristys.aristysapp.ui.ux.contact.UXContactFragment;
+import com.aristys.aristysapp.ui.ux.describe.UXFragment;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 

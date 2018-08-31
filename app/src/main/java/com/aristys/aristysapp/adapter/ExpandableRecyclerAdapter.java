@@ -1,32 +1,27 @@
 package com.aristys.aristysapp.adapter;
 
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.LruCache;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.NetworkImageView;
-import com.android.volley.toolbox.Volley;
-import com.aristys.aristysapp.model.DetailPost;
-
 import com.aristys.aristysapp.R;
-import com.aristys.aristysapp.interfaces.NetworkController;
+import com.aristys.aristysapp.model.DetailPost;
 import com.aristys.aristysapp.model.Post;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import static com.aristys.aristysapp.adapter.DateFormat.getDateFormatted;
+import static com.aristys.aristysapp.adapter.NetworkController.getBitmapFromURL;
 
 public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableRecyclerAdapter.ViewHolder> {
 
@@ -36,19 +31,16 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableR
 
   private LayoutInflater inflater = null;
 
-  private LruCache <Integer, Bitmap> imageCache;
-  private RequestQueue queue;
-
   public ExpandableRecyclerAdapter(Context context, List <Post> postsList) {
     this.context = context;
     this.postsList = postsList;
     inflater = LayoutInflater.from(context);
 
-    final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-    final int cacheSize = maxMemory / 8;
-    imageCache = new LruCache <>(cacheSize);
+  }
 
-    queue = Volley.newRequestQueue(context);
+  public void setData(List<Post> postsList) {
+    this.postsList = postsList;
+    notifyDataSetChanged();
   }
 
   @Override
@@ -65,10 +57,10 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableR
 
     final Post post = postsList.get(i);
 
-    holder.title.setText(post.getTitle());
-    holder.date.setText(post.getDate());
+    holder.title.setText(Html.fromHtml(post.getTitle()));
+    holder.date.setText(getDateFormatted(post.getDate()));
 
-    holder.thumbnail.setImageUrl(post.getImgURL(), NetworkController.getInstance(context).getImageLoader());
+    Glide.with(context).load(post.getImgURL()).into(holder.thumbnail);
     holder.thumbnail.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -87,7 +79,7 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableR
   public class ViewHolder extends RecyclerView.ViewHolder {
 
     public TextView title, date;
-    private NetworkImageView thumbnail;
+    private ImageView thumbnail;
 
     public ViewHolder(View view) {
 
@@ -95,7 +87,7 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableR
 
       title = (TextView) view.findViewById(R.id.wptitle);
       date = (TextView) view.findViewById(R.id.wpdate);
-      thumbnail = (NetworkImageView) view.findViewById(R.id.wpthumbnail);
+      thumbnail = (ImageView) view.findViewById(R.id.wpthumbnail);
     }
   }
 }

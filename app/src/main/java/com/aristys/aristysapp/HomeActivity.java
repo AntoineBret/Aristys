@@ -1,13 +1,9 @@
 package com.aristys.aristysapp;
 
-import android.content.DialogInterface;
 import android.graphics.drawable.AnimatedVectorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,11 +11,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.aristys.aristysapp.fragment.CompanyFragment;
-import com.aristys.aristysapp.fragment.FindUsFragment;
-import com.aristys.aristysapp.fragment.OurServiceFragment;
-import com.aristys.aristysapp.fragment.OurWorkFragment;
-import com.aristys.aristysapp.fragment.WebViewFragment;
+import com.aristys.aristysapp.ui.home.company.CompanyFragment;
+import com.aristys.aristysapp.ui.home.find_us.FindUsFragment;
+import com.aristys.aristysapp.ui.home.service.OurServiceFragment;
+import com.aristys.aristysapp.ui.home.our_work.OurWorkFragment;
+import com.aristys.aristysapp.ui.home.webview.WebViewFragment;
 import com.mikepenz.itemanimators.AlphaCrossFadeAnimator;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.Drawer;
