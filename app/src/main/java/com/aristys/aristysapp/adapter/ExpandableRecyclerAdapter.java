@@ -3,10 +3,8 @@ package com.aristys.aristysapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
-import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +19,6 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import static com.aristys.aristysapp.adapter.DateFormat.getDateFormatted;
-import static com.aristys.aristysapp.adapter.NetworkController.getBitmapFromURL;
 
 public class ExpandableRecyclerAdapter extends RecyclerView.Adapter <ExpandableRecyclerAdapter.ViewHolder> {
 

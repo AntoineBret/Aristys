@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.aristys.aristysapp.R;
 import com.aristys.aristysapp.adapter.ExpandableRecyclerAdapter;
 import com.aristys.aristysapp.model.Post;
-import com.aristys.aristysapp.remote.ApiClient;
+import com.aristys.aristysapp.remote.ApiClientWordPress;
 import com.aristys.aristysapp.remote.ApiEndPointInterface;
 import com.aristys.aristysapp.utils.Constants;
 import com.bumptech.glide.Glide;
@@ -88,8 +88,8 @@ public class CompanyFragment extends Fragment {
     }
 
     public void requestData() {
-        apiInterface = new ApiClient(getContext())
-                .getClient()
+        apiInterface = new ApiClientWordPress(getContext())
+                .getWPClient()
                 .create(ApiEndPointInterface.class);
 
         apiInterface.getPost()

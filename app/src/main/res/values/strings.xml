@@ -9,6 +9,9 @@
 
   /* Title drawer menu */
 
+  <string name="title_crm">Suivi projet (Trello)</string>
+  <string name="desc_crm">Beta test CRM Aristys</string>
+
   <string name="title_company">Blog Aristys</string>
   <string name="desc_company">L\'actu web et techno</string>
 
@@ -18,8 +21,8 @@
   <string name="title_ourwork">Nos réalisations</string>
   <string name="desc_ourwork">Galerie de nos sites web</string>
 
-  <string name="title_crm">Suivi projet (Trello)</string>
-  <string name="desc_crm">Beta test CRM Aristys</string>
+  <string name="title_community_partner">Nos partenaires</string>
+  <string name="desc_community_partner">Le réseau Aristys-Web</string>
 
   <string name="title_contact">Nous contacter</string>
   <string name="desc_contact">Les infos dont vous avez besoin</string>
@@ -177,6 +180,15 @@
 
   </string-array>
 
+    <string-array name="ourpartnair_link">
+        <item>https://www.gmpconseil.fr/club-network/</item>
+        <item>http://www.digital-league.org/</item>
+        <item>http://www.innovergne.fr/</item>
+        <item>https://www.eco-conception.fr/</item>
+        <item>http://pce-clermont.fr/</item>
+        <item>https://play.google.com/store/apps/details?id=fr.smartelectriclyon.wasteblasterz</item>
+    </string-array>
+
   /* Back arrow animation to hamburger*/
 
   <string name="menu_vector_path" translatable="false">M20 30,L80 30,M20 50,L80 50,M20 70,L80 70</string>
@@ -187,5 +199,13 @@
   /* Back twice exit message*/
 
   <string name="exit_press_back_twice_message">Quitter Aristys-app?</string>
+
+  //login_cardview.xml
+  <string name="noAccount">Pas encore de compte ?</string>
+  <string name="logDescribe">Log</string>
+  <string name="passwordDescribe">Password</string>
+  <string name="buttonSignin">Login</string>
+  <string name="loginDesc">S\'identifier</string>
+    <string name="loreum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel felis eget tortor pretium sodales sed ac enim. Proin condimentum, sem eget ultricies tempus, odio dolor pellentesque est, vel ornare ex arcu id lacus. Pellentesque ut porta augue. Integer varius hendrerit metus vitae euismod. Quisque ut facilisis erat. Pellentesque congue blandit diam eu accumsan. Mauris sagittis nibh ac mollis mollis. Vestibulum mattis maximus feugiat. Aliquam iaculis vehicula est, nec sagittis eros laoreet non.</string>
 
 </resources>

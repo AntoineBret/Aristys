@@ -13,11 +13,11 @@ public class Constants {
     public static final int VIEW_TYPE_MESSAGE_RECEIVED = 2;
 
     //Http codes list
-    public interface httpcodes{
+    public interface httpcodes {
         int STATUS_OK = 200;
         String MESSAGE_STATUS_OK = "Query successfully processed : 200";
 
-        int STATUS_NO_CONTENT= 204;
+        int STATUS_NO_CONTENT = 204;
         String MESSAGE_NO_CONTENT = "";
 
         int STATUS_BAD_REQUEST = 400;
@@ -36,6 +36,24 @@ public class Constants {
         String MESSAGE_SERVER_ERROR = "Server Error : 500 error";
 
         String ERROR_UNKNOWN = "Error not hold : unknown error";
+    }
 
+    //trello key
+    public interface trello_url {
+        String API_KEY = "262b4db409b7f8233f80ae9e51476dd3";
+        String API_SECRET = "faa3fc38297a6419cbe6d3ac6c1e38626cfa9c6b0812552742824321748e2882";
+        String RESOURCE_URL ="https://trello.com/1/members/me";
+    }
+
+    //drawer constants
+    public interface menu_drawer {
+        public static final long blog = 1;
+        public static final long business = 2;
+        public static final long work = 3;
+        public static final long partnair = 4;
+        public static final long contact = 5;
+        public static final long twitter = 6;
+        public static final long facebook = 7;
+        public static final long linkedin = 8;
     }
 }

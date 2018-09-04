@@ -8,22 +8,22 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.aristys.aristysapp.api.BaseUrl.BASE_URL;
+import static com.aristys.aristysapp.api.BaseUrl.WP_BASE_URL;
 
 
-public class ApiClient {
+public class ApiClientWordPress {
 
     private static Retrofit retrofit = null;
     private Context context;
 
-    public ApiClient(Context context) {
+    public ApiClientWordPress(Context context) {
         setContext(context);
     }
 
-    public ApiClient() {
+    public ApiClientWordPress() {
     }
 
-    public Retrofit getClient() {
+    public Retrofit getWPClient() {
 
         if (retrofit == null) {
 
@@ -38,7 +38,7 @@ public class ApiClient {
                     .build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(WP_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(client)
@@ -51,7 +51,7 @@ public class ApiClient {
         return context;
     }
 
-    public ApiClient setContext(Context context) {
+    public ApiClientWordPress setContext(Context context) {
         this.context = context;
         return this;
     }
