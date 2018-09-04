@@ -26,6 +26,7 @@ import java.util.concurrent.Callable;
 
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.internal.operators.single.SingleFromCallable;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -50,6 +51,8 @@ public class AuthorizeFragment extends Fragment {
 
     //JSOUP
     private Connection.Response authorizationFormResponse;
+    private Connection.Response loginActionResponse;
+    private FormElement validationForm;
 
     //UI
     private Button accept_button;
@@ -132,9 +135,10 @@ public class AuthorizeFragment extends Fragment {
                 });
     }
 
+    @SuppressLint("CheckResult")
     private void test() throws IOException {
         //        // ## Find the form first...
-        FormElement validationForm = (FormElement) authorizationFormResponse.parse()
+        validationForm = (FormElement) authorizationFormResponse.parse()
                 .select("#surface > div.account-content.clearfix > div.buttons > form").first();
         //Check if exist
         checkElement("Authorization Form", validationForm);
@@ -143,12 +147,34 @@ public class AuthorizeFragment extends Fragment {
         Element button_connect = validationForm.getElementsByClass("button primary").first();
         checkElement("Button Connect", button_connect);
 
-        // # Now send the form for login
-//        Connection.Response loginActionResponse = connectButton.submit()
-//                .cookies(authorizationFormResponse.cookies())
-//                .userAgent(USER_AGENT)
-//                .execute();
+        new SingleFromCallable(new Callable<Connection.Response>() {
+            @Override
+            public Connection.Response call() throws Exception {
+                // # Now send the form for login
+                loginActionResponse = validationForm.submit()
+                        .cookies(authorizationFormResponse.cookies())
+                        .userAgent(USER_AGENT)
+                        .execute();
+                return loginActionResponse;
+            }
+        }).subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableSingleObserver<Connection.Response>() {
+                    @Override
+                    public void onSuccess(Connection.Response response) {
+                        try {
+                            System.out.println(loginActionResponse.parse().html());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
     }
 
     public static void checkElement(String name, Element elem) {
