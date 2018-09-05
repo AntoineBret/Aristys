@@ -3,7 +3,6 @@ package com.aristys.aristysapp.ui.login_trello;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import com.aristys.aristysapp.R;
 import com.github.scribejava.apis.TrelloApi;
 import com.github.scribejava.core.builder.ServiceBuilder;
-import com.github.scribejava.core.model.OAuth1AccessToken;
 import com.github.scribejava.core.model.OAuth1RequestToken;
 import com.github.scribejava.core.oauth.OAuth10aService;
 
@@ -26,7 +24,6 @@ import java.util.concurrent.Callable;
 
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.internal.operators.single.SingleFromCallable;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -46,14 +43,10 @@ public class AuthorizeFragment extends Fragment {
     private OAuth10aService service;
     private OAuth1RequestToken requestToken;
     private String authorizationUrl;
-    private String oauthVerifier;
-    public static OAuth1AccessToken accessToken;
 
     //JSOUP
     private Connection.Response authorizationFormResponse;
-    private Connection.Response loginActionResponse;
-    private FormElement validationForm;
-
+    private String redirectConnectionURl;
     //UI
     private Button accept_button;
     private Button refuse_button;
@@ -62,8 +55,8 @@ public class AuthorizeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_authorize, container, false);
 
-        accept_button = rootView.findViewById(R.id.accept_button);
-        refuse_button = rootView.findViewById(R.id.refuse_button);
+        accept_button = rootView.findViewById(R.id.buttonServiceAgree);
+        refuse_button = rootView.findViewById(R.id.buttonServiceDecline);
 
         service = new ServiceBuilder(API_KEY)
                 .apiSecret(API_SECRET)
@@ -74,6 +67,35 @@ public class AuthorizeFragment extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        accept_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ## ... and send it to connect to Trello fragment ...
+                Bundle bundle = new Bundle();
+                bundle.putString("redirectConnectionURl", redirectConnectionURl);
+
+                Fragment connectToTrelloFragment = ConnectToTrelloFragment.newInstance();
+                connectToTrelloFragment.setArguments(bundle);
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.login_frame_container, connectToTrelloFragment)
+                        .disallowAddToBackStack()
+                        .commit();
+            }
+        });
+
+        refuse_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+    }
+
     @SuppressLint("CheckResult")
     public void ConnectToTrello() {
         Single.fromCallable(new Callable<String>() {
@@ -81,7 +103,7 @@ public class AuthorizeFragment extends Fragment {
             public String call() throws Exception {
                 requestToken = service.getRequestToken();
                 authorizationUrl = service.getAuthorizationUrl(requestToken);
-                Log.d("URL", authorizationUrl);
+                System.out.println(authorizationUrl);
                 return authorizationUrl;
             }
         }).subscribeOn(Schedulers.computation())
@@ -122,7 +144,7 @@ public class AuthorizeFragment extends Fragment {
                     @Override
                     public void onSuccess(Connection.Response response) {
                         try {
-                            test();
+                            parseURL();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -136,45 +158,21 @@ public class AuthorizeFragment extends Fragment {
     }
 
     @SuppressLint("CheckResult")
-    private void test() throws IOException {
-        //        // ## Find the form first...
-        validationForm = (FormElement) authorizationFormResponse.parse()
-                .select("#surface > div.account-content.clearfix > div.buttons > form").first();
+    private void parseURL() throws IOException {
+        // ## Find the form first...
+        FormElement validationForm = (FormElement) authorizationFormResponse.parse()
+                .selectFirst("#surface > div.account-content.clearfix > div.buttons > form");
         //Check if exist
         checkElement("Authorization Form", validationForm);
 
-//         ## ... then find the button ...
+        // ## ... then find the button ...
         Element button_connect = validationForm.getElementsByClass("button primary").first();
+        //Check if exist
         checkElement("Button Connect", button_connect);
 
-        new SingleFromCallable(new Callable<Connection.Response>() {
-            @Override
-            public Connection.Response call() throws Exception {
-                // # Now send the form for login
-                loginActionResponse = validationForm.submit()
-                        .cookies(authorizationFormResponse.cookies())
-                        .userAgent(USER_AGENT)
-                        .execute();
-                return loginActionResponse;
-            }
-        }).subscribeOn(Schedulers.computation())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(new DisposableSingleObserver<Connection.Response>() {
-                    @Override
-                    public void onSuccess(Connection.Response response) {
-                        try {
-                            System.out.println(loginActionResponse.parse().html());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+        // ## ... get href value of class element ...
+        redirectConnectionURl = "https://trello.com" + (button_connect.attr("href"));
 
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-                });
     }
 
     public static void checkElement(String name, Element elem) {

@@ -202,10 +202,14 @@
 
   //login_cardview.xml
   <string name="noAccount">Pas encore de compte ?</string>
-  <string name="logDescribe">Log</string>
-  <string name="passwordDescribe">Password</string>
+  <string name="logDescribe">E-mail</string>
+  <string name="passwordDescribe">Mot de passe</string>
   <string name="buttonSignin">Login</string>
-  <string name="loginDesc">S\'identifier</string>
+  <string name="loginDesc">Se connecter à Trello</string>
     <string name="loreum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel felis eget tortor pretium sodales sed ac enim. Proin condimentum, sem eget ultricies tempus, odio dolor pellentesque est, vel ornare ex arcu id lacus. Pellentesque ut porta augue. Integer varius hendrerit metus vitae euismod. Quisque ut facilisis erat. Pellentesque congue blandit diam eu accumsan. Mauris sagittis nibh ac mollis mollis. Vestibulum mattis maximus feugiat. Aliquam iaculis vehicula est, nec sagittis eros laoreet non.</string>
+    <string name="identify">Laisser Aristys-App utiliser votre compte ?</string>
+  <string name="termsOfServiceDesc">Cette application pourra : Lire tous vos tableaux et équipes Vous ne pourrez pas : Créer et mettre à jour des cartes, des listes, des tableaux et des équipes Écrire des commentaires pour soi Lire votre adresse e-mail Voir votre mot de passe Trello</string>
+  <string name="connect">Se connecter</string>
+    <string name="refuse">Refuser</string>
 
 </resources>
