@@ -6,6 +6,8 @@
 
   <string name="openDrawer">Open navigation drawer</string>
   <string name="closeDrawer">Close navigation drawer</string>
+  <string name="navHeaderSignOut">Se déconnecter</string>
+  <string name="debugSignOut">Successfully Signed Out!</string>
 
   /* Title drawer menu */
 

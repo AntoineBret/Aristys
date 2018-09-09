@@ -38,6 +38,7 @@
     <activity android:name="com.aristys.aristysapp.SkillActivity" />
     <activity android:name="com.aristys.aristysapp.OtherActivity" />
     <activity android:name="com.aristys.aristysapp.TrelloActivity" />
+    <activity android:name="com.aristys.aristysapp.StartSignInActivity" />
 
     <meta-data
       android:name="com.google.android.geo.API_KEY"

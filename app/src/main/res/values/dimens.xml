@@ -56,4 +56,7 @@
   <dimen name="image_final_width">0dp</dimen>
   <dimen name="spacing_normal">16dp</dimen>
 
+  /* StartSignInActivity */
+  <dimen name="google_top_margin">100dp</dimen>
+
 </resources>
